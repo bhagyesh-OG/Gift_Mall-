@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function PageHero({ eyebrow, number, title, emphasis, description, ctaLabel, ctaTo = "/shop", image }) {
   return (
@@ -15,7 +16,7 @@ export default function PageHero({ eyebrow, number, title, emphasis, description
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .35 }}>{description}</motion.p>
         <div className="inner-hero-actions">
-          {ctaLabel && <a className="primary-btn" href={ctaTo}>{ctaLabel} <ArrowRight size={17} /></a>}
+          {ctaLabel && <Link className="primary-btn" to={ctaTo}>{ctaLabel} <ArrowRight size={17} /></Link>}
           <span className="hero-scroll"><ArrowDown size={15} /> Scroll to explore</span>
         </div>
       </div>
